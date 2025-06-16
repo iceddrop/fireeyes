@@ -5,6 +5,7 @@ import { GoPerson } from "react-icons/go";
 import { LiaHandsHelpingSolid } from "react-icons/lia";
 import { IoIosLogOut } from "react-icons/io";
 import { useStore } from "../../store/store";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
 
@@ -29,9 +30,11 @@ const Sidebar = () => {
             <GrAnalytics className="mr-2" />
             Analytics
           </li>
-          <li className="flex items-center cursor-pointer justify-center text-lg mb-8 py-2 rounded-md hover:bg-blue-800">
+          <li >
+           <Link className="flex items-center cursor-pointer justify-center text-lg mb-8 py-2 rounded-md hover:bg-blue-800" to="/home/profile">
             <GoPerson className="mr-2" />
             Profile
+            </Link>
           </li>
           <li className="flex items-center cursor-pointer justify-center text-lg mb-8 py-2 rounded-md hover:bg-blue-800">
             <LiaHandsHelpingSolid className="mr-2" />

@@ -5,12 +5,9 @@ import Sidebar from "../component/Sidebar/Sidebar";
 const DashboardLayout = () => {
   return (
     <div className="flex h-screen">
-    <AppNav className=""/>
-
+      <AppNav className="" />
       <div className=" w-full">
-           <Sidebar className=" "/>
-
-
+        <Sidebar className=" " />
         <main className="p-4 md:pl-56 w-screen">
           <Outlet />
         </main>
