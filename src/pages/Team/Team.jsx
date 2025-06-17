@@ -4,7 +4,7 @@ import portrait from "../../assets/androgynous-6588615_640.jpg"
 import Footer from "../../component/Footer/Footer";
 import tomiwa from "../../assets/tomiwa.jpg";
 import suqroh from "../../assets/suqroh.jpg"; 
-import olawalejpg from "../../assets/olawalejpg.jpg"; 
+import olawalejpg from "../../assets/olawale.jpg"; 
 
 const Team = () => {
   return (

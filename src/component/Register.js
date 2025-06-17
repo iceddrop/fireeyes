@@ -189,7 +189,7 @@ const Register = () => {
               />
             </div>
             <div className="flex flex-col w-full mt-3">
-              <label>Get SMS OTP</label>
+              <label>Phone Number</label>
               <div className="flex">
                 <input
                   type="text"
@@ -217,7 +217,7 @@ const Register = () => {
               </div>
             </div>
             <div className="flex flex-col w-full mt-3">
-              <label>Get Email OTP</label>
+              <label>Email</label>
               <div className="flex">
                 <input
                   type="text"
