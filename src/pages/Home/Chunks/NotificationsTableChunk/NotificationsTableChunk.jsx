@@ -15,18 +15,9 @@ const NotificationsTableChunk = () => {
             Status: "Order Placed",
         },
         {
-            OrderID: 1457,
-            ProductName: "Gas Leak",
-            Cost: "43000",
-            ShippingMethod: "Delivery",
-            OrderDate: "10-04-2024",
-            Quantity: "01:25",
-            Status: "Order Placed",
-        },
-        {
             OrderID: 1458,
             ProductName: "Fire Outbreak",
-            Cost: "45000",
+            Cost: "resolved",
             ShippingMethod: "Delivery",
             Quantity: "01:25",
             OrderDate: "10-04-2024",
@@ -35,11 +26,11 @@ const NotificationsTableChunk = () => {
     ];
 
     return (
-        <div className="relative overflow-x-auto bg-[#fff]">
+        <div className=" bg-[#FAF9F6] py-2">
             <h4 className="text-xl pl-2 font-bold py-6">Alerts History</h4>
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 border-solid rounded-lg hidden md:table">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 border-solid rounded-lg hidden   md:table bg-[#FAF9F6]">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr className="bg-white border-b dark:bg-gray-800 dark:border-[#EBEDEF] border-[#EBEDEF]">
+                    <tr className="bg-[#FAF9F6] border-b dark:bg-gray-800 dark:border-[#EBEDEF] border-[#EBEDEF]">
                         <th scope="col" className="px-6 py-3">Notification Type</th>
                         <th scope="col" className="px-6 py-3">Time</th>
                         <th scope="col" className="px-6 py-3">Date</th>
@@ -49,7 +40,7 @@ const NotificationsTableChunk = () => {
                 </thead>
                 <tbody>
                     {Orders.map((order, index) => (
-                        <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-[#EBEDEF] border-[#EBEDEF] hover:bg-[#FFF0ED]">
+                        <tr key={index} className="bg-[#FAF9F6] border-b dark:bg-gray-800 dark:border-[#EBEDEF] border-[#EBEDEF] hover:bg-[#FFF0ED]">
                             <td className="px-6 py-4 text-[#707070]">{order.ProductName}</td>
                             <td className="px-6 py-4 text-[#707070]">{order.Quantity}</td>
                             <td className="px-6 py-4 text-[#707070]">{order.OrderDate}</td>
@@ -67,13 +58,13 @@ const NotificationsTableChunk = () => {
             </table>
 
             {/* Responsive View */}
-            <div className="md:hidden space-y-4">
+            <div className="md:hidden space-y-4 bg-[#FAF9F6] px-2">
                 {Orders.map((order, index) => (
-                    <div key={index} className="border border-[#EBEDEF] p-4 rounded-lg shadow-sm bg-white">
-                        <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
+                    <div key={index} className="border border-[#EBEDEF] p-4 rounded-lg shadow-sm bg-[#FAF9F6]">
+                        <div className="grid grid-cols-2 gap-2 text-sm text-gray-700 bg-[#FAF9F6]">
 
                             <div className="font-semibold">Notification Type:</div>
-                            <div className="text-[#707070]">{order.ProductName}</div>
+                            <div className="text-[#707070] ">{order.ProductName}</div>
 
                             <div className="font-semibold">Time:</div>
                             <div className="text-[#707070]">{order.Quantity}</div>

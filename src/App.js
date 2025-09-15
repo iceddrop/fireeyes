@@ -9,7 +9,6 @@ import DashboardLayout from "./Layout/DashboardLayout";
 import Profile from "./pages/Profile/Profile";
 import Login from "./component/Login";
 import LinkDetector from "./pages/LinkDetector";
-
 function App() {
   return (
     <Router>

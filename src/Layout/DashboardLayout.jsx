@@ -6,9 +6,9 @@ const DashboardLayout = () => {
   return (
     <div className="flex h-screen">
       <AppNav className="" />
-      <div className=" w-full">
+      <div className=" w-full ">
         <Sidebar className=" " />
-        <main className="p-4 md:pl-56 w-screen">
+        <main className="p-4 md:pl-56 md:pr-10  w-screen  ">
           <Outlet />
         </main>
       </div>

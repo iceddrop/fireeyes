@@ -32,59 +32,12 @@ const Register = () => {
   const [notification, setNotification] = useState("");
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState("#ffffff");
-  // const ToastExample = () => {
-  //   const showToast = () => {
-  //     toast.success("This is a toast alert!", {
-  //       position: toast.POSITION.TOP_CENTER,
-  //     });
-  //   };
-  // };
+ 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // const sendOtp = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const [sms, email] = await Promise.all([
-  //       axios.get(
-  //         `https://fireeyes-detector-wokt.onrender.com/user/sendOtp/${formData.phonenumber}`
-  //       ),
-  //       axios.post(
-  //         `https://fireeyes-detector-wokt.onrender.com/user/sendOtpToEmail/${encodeURIComponent(
-  //           formData.email
-  //         )}`
-  //       ),
-  //     ]);
-  //     setLoading(false);
-
-  //     return {
-  //       first: sms.data,
-  //       second: email.data,
-  //     };
-  //   } catch (error) {
-  //     setLoading(false);
-  //     setError("Failed to send OTP. Please try again.");
-  //   }
-  // };
-
-  // const sendEmailOtp = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     setLoading(true);
-  //     const response = await axios.post(
-  //       await axios.post(
-  //         `https://fireeyes-detector-wokt.onrender.com/user/sendOtpToEmail/${encodeURIComponent(
-  //           formData.email
-  //         )}`
-  //       )
-  //     );
-  //   } catch (error) {
-  //     setLoading(false);
-  //     setError("Failed to send OTP. Please try again.");
-  //   }
-  // };
 
   const handleSendOtp = async () => {
     try {

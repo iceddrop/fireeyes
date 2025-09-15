@@ -11,19 +11,9 @@ import { HiHome } from "react-icons/hi";
 import Footer from "./Footer/Footer";
 import { jwtDecode } from "jwt-decode";
 const Login = () => {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   phonenumber: "",
-  //   email: "",
-  //   password: "",
-  //   notificationPreference: "SMS",
-  //   otp: "",
-  //   emailVerificationCode: "",
-  // });
-
-  const [phonenumber , setPhonenumber] = useState("");
+  const [phonenumber, setPhonenumber] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const [otpLoadingState, setOtpLoadingState] = useState({
     sms: false,
     email: false,
@@ -34,132 +24,24 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState("#ffffff");
   const navigate = useNavigate();
-  // const ToastExample = () => {
-  //   const showToast = () => {
-  //     toast.success("This is a toast alert!", {
-  //       position: toast.POSITION.TOP_CENTER,
-  //     });
-  //   };
-  // };
 
-  // const handleChange = (e) => {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // };
-
-  // const sendOtp = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const [sms, email] = await Promise.all([
-  //       axios.get(
-  //         `https://fireeyes-detector-wokt.onrender.com/user/sendOtp/${formData.phonenumber}`
-  //       ),
-  //       axios.post(
-  //         `https://fireeyes-detector-wokt.onrender.com/user/sendOtpToEmail/${encodeURIComponent(
-  //           formData.email
-  //         )}`
-  //       ),
-  //     ]);
-  //     setLoading(false);
-
-  //     return {
-  //       first: sms.data,
-  //       second: email.data,
-  //     };
-  //   } catch (error) {
-  //     setLoading(false);
-  //     setError("Failed to send OTP. Please try again.");
-  //   }
-  // };
-
-  // const sendEmailOtp = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     setLoading(true);
-  //     const response = await axios.post(
-  //       await axios.post(
-  //         `https://fireeyes-detector-wokt.onrender.com/user/sendOtpToEmail/${encodeURIComponent(
-  //           formData.email
-  //         )}`
-  //       )
-  //     );
-  //   } catch (error) {
-  //     setLoading(false);
-  //     setError("Failed to send OTP. Please try again.");
-  //   }
-  // };
-
-  // const handleSendOtp = async () => {
-  //   try {
-  //     setOtpLoadingState({ ...otpLoadingState, sms: true });
-  //     const response = await axios.post(
-  //       `https://fireeyes-detector-wokt.onrender.com/user/sendOtp/${formData.phonenumber}`
-  //     );
-  //     console.log(response);
-  //     toast.success("SMS OTP sent successfully!");
-  //   } catch (error) {
-  //     console.error("Error sending SMS OTP:", error);
-  //     toast.error("Failed to send SMS OTP.");
-  //   } finally {
-  //     setOtpLoadingState({ ...otpLoadingState, sms: false });
-  //   }
-  // };
-
-  // const handleSendEmailOtp = async () => {
-  //   try {
-  //     setOtpLoadingState({ ...otpLoadingState, email: true });
-  //     const response = await axios.post(
-  //       `https://fireeyes-detector-wokt.onrender.com/user/sendOtpToEmail/${encodeURIComponent(
-  //         formData.email
-  //       )}`
-  //     );
-  //     console.log(response);
-  //     toast.success("Email OTP sent successfully!");
-  //   } catch (error) {
-  //     console.error("Error sending Email OTP:", error);
-  //     toast.error("Failed to send Email OTP.");
-  //   } finally {
-  //     setOtpLoadingState({ ...otpLoadingState, email: false });
-  //   }
-  // };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     setLoading(true);
-  //     const response = await axios.post(
-  //       "https://fireeyes-detector-wokt.onrender.com/user/verifyOtpAndCreateUser",
-  //       formData,
-  //       {
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //         },
-  //       }
-  //     );
-  //     if (response.status === 200 && response.data === ' User registered successfully.') {
-  //       toast.success("Registration Successful!");
-  //     } else {
-  //       toast.error('Registration failed: ' + response.data);
-  //     }
-  //   } catch (error) {
-  //     console.error('Registration error:', error.response?.data || error.message);
-  //     toast.error('Registration failed: ' + (error.response?.data?.message || 'An error occurred'));
-  //   }
-  // };
-
-    const handleLogin = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-       setLoading(true);
-      const response = await fetch("https://fireeyes-detector-wokt.onrender.com/user/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "*/*",
-        },
-        body: JSON.stringify({ phoneNumber: phonenumber, password }),
-      });
+      setLoading(true);
+      const response = await fetch(
+        "https://fireeyes-detector-wokt.onrender.com/user/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "*/*",
+          },
+          body: JSON.stringify({ phoneNumber: phonenumber, password }),
+        }
+      );
 
       let data;
       const contentType = response.headers.get("content-type");
@@ -192,10 +74,9 @@ const Login = () => {
 
       if (user.role === "ROLE_ADMIN") {
         navigate("/home");
-    } else {
+      } else {
         navigate("/user/linkdetector");
       }
-
     } catch (err) {
       console.error("Login error:", err.message);
       setError(err.message || "Something went wrong during login.");
@@ -230,27 +111,30 @@ const Login = () => {
               <input
                 type="text"
                 name="phonenumber"
-                     value={phonenumber}
+                value={phonenumber}
                 onChange={(e) => setPhonenumber(e.target.value)}
                 required
                 placeholder="Enter your phone number"
               />
             </div>
-           
+
             <div className=" flex flex-col pt-4 w-full">
               <label>Password</label>
               <input
                 type="text"
                 name="password"
-                  value={password}
+                value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 required
               />
             </div>
-          
+            <Link className="flex justify-end text-blue-700" to="/forgotpassword">Forgot Password?</Link>
             <div className="flex justify-center pt-4 pb-6">
-              <button type="submit" className="py-2 px-4 text-white rounded-md bg-red-600">
+              <button
+                type="submit"
+                className="py-2 px-4 text-white rounded-md bg-red-600"
+              >
                 {loading ? (
                   <CircleLoader
                     loading={loading}
@@ -263,9 +147,13 @@ const Login = () => {
                   "Login"
                 )}
               </button>
-            
             </div>
- <p className="text-center pb-2">Don't have an account? <Link className="text-blue-500" to="/Register">Sign up</Link></p>
+            <p className="text-center pb-2">
+              Don't have an account?{" "}
+              <Link className="text-blue-700" to="/Register">
+                Sign up
+              </Link>
+            </p>
             {error && <p className="error text-center">{error}</p>}
           </form>
         </div>

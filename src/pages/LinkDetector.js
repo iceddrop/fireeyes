@@ -52,7 +52,7 @@ class LinkDetector extends Component {
         this.setState({ responseMessage: text, isError: false }, () => {
           setTimeout(() => {
             window.location.href =
-              "https://fire-detecter-registeration-portal.vercel.app/home";
+              "http://localhost:3000/home";
           }, 1500);
         });
       } else {
