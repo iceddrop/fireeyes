@@ -1,9 +1,7 @@
 
 
 const NotificationsTableChunk = () => {
-   
-
-
+    
     const Orders = [
         {
             OrderID: 1456,

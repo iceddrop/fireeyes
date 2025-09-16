@@ -52,7 +52,7 @@ class LinkDetector extends Component {
         this.setState({ responseMessage: text, isError: false }, () => {
           setTimeout(() => {
             window.location.href =
-              "https://fireeyes-w8d7-2ftv8f1s6-iceddrops-projects.vercel.app//home";
+              "http://localhost:3000/home";
           }, 1500);
         });
       } else {
