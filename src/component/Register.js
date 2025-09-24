@@ -43,7 +43,7 @@ const Register = () => {
     try {
       setOtpLoadingState({ ...otpLoadingState, sms: true });
       const response = await axios.post(
-        `https://fireeyes-detector-wokt.onrender.com/user/sendOtp/${formData.phonenumber}`
+        `https://fireeyes-detector-6erx.onrender.com/user/sendOtp/${formData.phonenumber}`
       );
       console.log(response);
       toast.success("SMS OTP sent successfully!");
@@ -59,7 +59,7 @@ const Register = () => {
     try {
       setOtpLoadingState({ ...otpLoadingState, email: true });
       const response = await axios.post(
-        `https://fireeyes-detector-wokt.onrender.com/user/sendOtpToEmail/${encodeURIComponent(
+        `https://fireeyes-detector-6erx.onrender.com/user/sendOtpToEmail/${encodeURIComponent(
           formData.email
         )}`
       );

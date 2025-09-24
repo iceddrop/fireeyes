@@ -32,7 +32,7 @@ const Login = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://fireeyes-detector-wokt.onrender.com/user/auth/login",
+        "https://fireeyes-detector-6erx.onrender.com/user/auth/login",
         {
           method: "POST",
           headers: {
