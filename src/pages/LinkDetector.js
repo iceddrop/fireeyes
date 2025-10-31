@@ -32,7 +32,7 @@ class LinkDetector extends Component {
       });
       return;
     }
-    const url = `https://fireeyes-detector-wokt.onrender.com/gas-detectors/user/assign?phonenumber=${encodeURIComponent(
+    const url = `https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/gas-detectors/user/assign?phonenumber=${encodeURIComponent(
       phonenumber
     )}&macAddress=${encodeURIComponent(macAddress)}`;
 
@@ -52,7 +52,7 @@ class LinkDetector extends Component {
         this.setState({ responseMessage: text, isError: false }, () => {
           setTimeout(() => {
             window.location.href =
-              "http://localhost:3000/home";
+              "https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/home";
           }, 1500);
         });
       } else {

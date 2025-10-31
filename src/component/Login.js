@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import "./Register.scss";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,15 +13,14 @@ const Login = () => {
   const [phonenumber, setPhonenumber] = useState("");
   const [password, setPassword] = useState("");
 
-  const [otpLoadingState, setOtpLoadingState] = useState({
-    sms: false,
-    email: false,
-  });
+  // const [otpLoadingState, setOtpLoadingState] = useState({
+  //   sms: false,
+  //   email: false,
+  // });
 
   const [error, setError] = useState("");
-  const [notification, setNotification] = useState("");
   const [loading, setLoading] = useState(false);
-  const [color, setColor] = useState("#ffffff");
+  const [color] = useState("#ffffff");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -32,14 +30,14 @@ const Login = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://fireeyes-detector-6erx.onrender.com/user/auth/login",
+        "https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/user/auth/login",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "*/*",
           },
-          body: JSON.stringify({ phoneNumber: phonenumber, password }),
+          body: JSON.stringify({ phoneNumber: phonenumber, password: password }),
         }
       );
 

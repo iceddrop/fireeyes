@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  {  useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Register.scss";
@@ -28,10 +28,9 @@ const Register = () => {
     email: false,
   });
 
-  const [error, setError] = useState("");
-  const [notification, setNotification] = useState("");
+  const [error] = useState("");
   const [loading, setLoading] = useState(false);
-  const [color, setColor] = useState("#ffffff");
+  const [color] = useState("#ffffff");
  
 
   const handleChange = (e) => {
@@ -43,7 +42,7 @@ const Register = () => {
     try {
       setOtpLoadingState({ ...otpLoadingState, sms: true });
       const response = await axios.post(
-        `https://fireeyes-detector-6erx.onrender.com/user/sendOtp/${formData.phonenumber}`
+        `https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/user/sendOtp/${formData.phonenumber}`
       );
       console.log(response);
       toast.success("SMS OTP sent successfully!");
@@ -59,7 +58,7 @@ const Register = () => {
     try {
       setOtpLoadingState({ ...otpLoadingState, email: true });
       const response = await axios.post(
-        `https://fireeyes-detector-6erx.onrender.com/user/sendOtpToEmail/${encodeURIComponent(
+        `https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/user/sendOtpToEmail/${encodeURIComponent(
           formData.email
         )}`
       );
@@ -78,7 +77,7 @@ const Register = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://fireeyes-detector-wokt.onrender.com/user/verifyOtpAndCreateUser",
+        "https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/user/verifyOtpAndCreateUser",
         formData,
         {
           headers: {
