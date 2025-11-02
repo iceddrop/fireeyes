@@ -8,7 +8,6 @@ import { Breadcrumb } from "flowbite-react";
 import { HiHome } from "react-icons/hi";
 import Footer from "./Footer/Footer";
 import { Button , Modal } from "flowbite-react";
-import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 const ValidateOtp = () => {

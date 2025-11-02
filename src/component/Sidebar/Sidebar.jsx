@@ -7,6 +7,13 @@ import { useStore } from "../../store/store";
 
 const Sidebar = () => {
 
+    const logout = () => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("phonenumber");
+      localStorage.removeItem("macAddress");
+  
+      window.location.href = '/login'
+    }
 
   const { sidebarOpened, closeSidebar, setActiveState, activeState } = useStore();
 
@@ -32,7 +39,7 @@ const Sidebar = () => {
             <GoGear className="mr-2" />
             Setting
           </li>
-          <li className="flex items-center cursor-pointer justify-center text-lg mb-8 py-2 rounded-md hover:bg-blue-800">
+          <li onClick={() => logout()} className="flex items-center cursor-pointer justify-center text-lg mb-8 py-2 rounded-md hover:bg-blue-800">
             <IoIosLogOut className="mr-2" />
             Logout
           </li>

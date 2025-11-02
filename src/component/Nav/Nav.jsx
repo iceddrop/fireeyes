@@ -2,9 +2,10 @@ import logo from "../../assets/9feae60ea81842259049ab0f27467b93-free-removebg-pr
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Button, Navbar } from "flowbite-react";
+import { Navbar } from "flowbite-react";
 const Nav = () => {
   const [scrollspyVal, setScrollspyVal] = useState("home");
+console.log(scrollspyVal);
 
   return (
     <>

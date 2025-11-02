@@ -21,26 +21,28 @@ import axios from "axios";
 const Home = () => {
   const [chartData, setChartData] = useState([]);
 
+  const [phoneNumber] = useState(() => localStorage.getItem("phonenumber") ?? "");
+  const [macAddress] = useState(() => localStorage.getItem("macAddress") ?? "");
+
+
   const [gasData, setGasData] = useState({});
 
     const handleRefresh = () => {
     window.location.reload();
   };
 
-  const getDetails = async () => {
+  const getDetails = async (signal) => {
+    if (!phoneNumber || !macAddress) return;
+
     const token = localStorage.getItem("token");
 
     try {
       const response = await axios.get(
         "https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/user/user-gas-details",
         {
-          params: {
-            phoneNumber: "07077504334",
-            macAddress: "EC:E3:34:23:48:C8",
-          },
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          params: { phoneNumber, macAddress },
+          headers: { Authorization: `Bearer ${token}` },
+          signal,
         }
       );
 
@@ -70,19 +72,18 @@ const Home = () => {
   };
 
   useEffect(() => {
-    let mounted = true;
-    // initial fetch
-    if (mounted) getDetails();
+    if (!phoneNumber || !macAddress) return;
 
-    const id = setInterval(() => {
-      getDetails();
-    }, 5000);
+    const controller = new AbortController();
+    getDetails(controller.signal); // initial fetch
+
+    const id = setInterval(() => getDetails(controller.signal), 5000);
 
     return () => {
-      mounted = false;
       clearInterval(id);
+      controller.abort();
     };
-  }, []);
+  }, [phoneNumber, macAddress]);
 
 
   return (

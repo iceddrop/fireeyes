@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { CircleLoader } from "react-spinners";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -52,9 +52,10 @@ class LinkDetector extends Component {
         this.setState({ responseMessage: text, isError: false }, () => {
           setTimeout(() => {
             window.location.href =
-              "https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/home";
+              "/home";
           }, 1500);
         });
+        localStorage.setItem("macAddress", macAddress);
       } else {
         this.setState({ responseMessage: text, isError: true });
           toast.error("Operation failed, try again")
