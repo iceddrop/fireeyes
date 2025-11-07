@@ -4,7 +4,7 @@ import portrait from "../../assets/androgynous-6588615_640.jpg"
 import Footer from "../../component/Footer/Footer";
 import tomiwa from "../../assets/tomiwa.jpg";
 import suqroh from "../../assets/suqroh.jpg"; 
-import olawalejpg from "../../assets/olawale.jpg"; 
+import olawalejpg from "../../assets/olawale.jpeg"; 
 
 const Team = () => {
   return (
@@ -50,7 +50,7 @@ const Team = () => {
         </div>
       </div>
 
-      <div className="lg:flex px-10 pt-16">
+      {/* <div className="lg:flex px-10 pt-16">
         <img className="size-96 object-cover rounded-md" src={portrait} alt="" />
         <div className="flex flex-col lg:pl-6 lg:w-96">
           <h3 className="text-2xl font-semi-bold pt-4 lg:pt-0">Ibikunle Tomiwa</h3>
@@ -61,7 +61,7 @@ const Team = () => {
             blanditiis eum recusandae!
           </p>
         </div>
-      </div>
+      </div> */}
       
       <div className="pt-6">
       <Footer/>

@@ -22,10 +22,10 @@ console.log(scrollspyVal);
         <div className="flex md:order-2">
         <div className="flex item-center">
             <Link
-              to={"/register"}
+              to={"/login"}
               className="bg-red-600 text-white py-2 px-4 mr-6 rounded-md"
             >
-              Register
+              Login
             </Link>
           </div>
           <Navbar.Toggle />
