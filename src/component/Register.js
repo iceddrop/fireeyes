@@ -42,7 +42,7 @@ const Register = () => {
     try {
       setOtpLoadingState({ ...otpLoadingState, sms: true });
       const response = await axios.post(
-        `https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/user/sendOtp/${formData.phonenumber}`
+        `http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/user/sendOtp/${formData.phonenumber}`
       );
       console.log(response);
       toast.success("SMS OTP sent successfully!");
@@ -58,7 +58,7 @@ const Register = () => {
     try {
       setOtpLoadingState({ ...otpLoadingState, email: true });
       const response = await axios.post(
-        `https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/user/sendOtpToEmail/${encodeURIComponent(
+        `http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/user/sendOtpToEmail/${encodeURIComponent(
           formData.email
         )}`
       );
@@ -77,7 +77,7 @@ const Register = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/user/verifyOtpAndCreateUser",
+        "http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/user/verifyOtpAndCreateUser",
         formData,
         {
           headers: {

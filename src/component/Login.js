@@ -30,7 +30,7 @@ const Login = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://fireeyes-gwetb3h6fchrb4hm.westeurope-01.azurewebsites.net/user/auth/login",
+        "http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/user/auth/login",
         {
           method: "POST",
           headers: {
