@@ -42,7 +42,7 @@ const Register = () => {
     try {
       setOtpLoadingState({ ...otpLoadingState, sms: true });
       const response = await axios.post(
-        `http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/user/sendOtp/${formData.phonenumber}`
+        `https://copper-imprint-479922-p4.uc.r.appspot.com/user/sendOtp/${formData.phonenumber}`
       );
       console.log(response);
       toast.success("SMS OTP sent successfully!");
@@ -58,7 +58,7 @@ const Register = () => {
     try {
       setOtpLoadingState({ ...otpLoadingState, email: true });
       const response = await axios.post(
-        `http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/user/sendOtpToEmail/${encodeURIComponent(
+        `https://copper-imprint-479922-p4.uc.r.appspot.com/user/sendOtpToEmail/${encodeURIComponent(
           formData.email
         )}`
       );
@@ -77,7 +77,7 @@ const Register = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/user/verifyOtpAndCreateUser",
+        "https://copper-imprint-479922-p4.uc.r.appspot.com/user/verifyOtpAndCreateUser",
         formData,
         {
           headers: {

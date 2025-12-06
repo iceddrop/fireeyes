@@ -38,7 +38,7 @@ const Home = () => {
 
     try {
       const response = await axios.get(
-        "http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/user/user-gas-details",
+        "https://copper-imprint-479922-p4.uc.r.appspot.com/user/user-gas-details",
         {
           params: { phoneNumber, macAddress },
           headers: { Authorization: `Bearer ${token}` },

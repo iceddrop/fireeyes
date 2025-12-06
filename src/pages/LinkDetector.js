@@ -32,7 +32,7 @@ class LinkDetector extends Component {
       });
       return;
     }
-    const url = `http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/gas-detectors/user/assign?phonenumber=${encodeURIComponent(
+    const url = `https://copper-imprint-479922-p4.uc.r.appspot.com/gas-detectors/user/assign?phonenumber=${encodeURIComponent(
       phonenumber
     )}&macAddress=${encodeURIComponent(macAddress)}`;
 

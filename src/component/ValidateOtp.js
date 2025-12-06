@@ -17,7 +17,7 @@ const ValidateOtp = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [color, setColor] = useState("#ffffff");
+  const [color] = useState("#ffffff");
   const [openModal, setOpenModal] = useState(false);
   const phonenumber = location.state?.phonenumber;
 
@@ -52,7 +52,7 @@ const ValidateOtp = () => {
       const payload = { otp, phonenumber };
       console.log("Sending payload:", payload); // Debugging purpose
       await axios.post(
-        "http://fireeyes-env-1.eba-9rmeyscd.eu-north-1.elasticbeanstalk.com/api/v1/FireEyes/validate-otp",
+        "https://copper-imprint-479922-p4.uc.r.appspot.com/api/v1/FireEyes/validate-otp",
         payload
       );
       setOpenModal('true')
